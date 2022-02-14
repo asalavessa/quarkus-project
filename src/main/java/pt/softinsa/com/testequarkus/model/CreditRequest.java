@@ -1,9 +1,6 @@
 package pt.softinsa.com.testequarkus.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class CreditRequest {
@@ -12,12 +9,24 @@ public class CreditRequest {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name="client_id")
     private int clientId;
+
+    @Column(name="client_name")
     private String clientName;
+
+    @Column(name="client_salary")
     private int clientSalary;
+
+    @Column(name="client_years_working")
     private int clientYearsWorking;
+
+    @Column(name="desired_quantity")
     private int desireQuantity;
+
+    @Column(name="number_of_paying_months")
     private int numberOfPayingMonths;
+
 
     public CreditRequest() {
     }
